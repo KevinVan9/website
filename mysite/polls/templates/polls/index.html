@@ -1,0 +1,33 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+  <script src="https://unpkg.com/htmx.org@1.9.9"></script>
+  <link rel="stylesheet" href="{% static 'polls/test.css' %}">
+  <link rel="stylesheet" href="{% static 'polls/popup.css' %}"/>
+  <title>
+      Kevin's webpage
+  </title>
+</head>
+<body>
+  <h1>
+    Testing HTMX and Django
+  </h1>
+    <div class="container">
+      <button hx-get="/polls/popup" hx-swap="outerHTML">
+        Click Me
+      </button>
+    </div>
+    <div>
+      <ul>
+        <li>
+          <a href="/polls/test">Lazy loading test</a>
+        </li>
+        <li>
+          <a href="/polls/test2">Non lazy loading test</a>
+        </li>
+      </ul>
+    </div>
+</body>
+</html>
