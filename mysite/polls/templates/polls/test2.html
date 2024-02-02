@@ -14,7 +14,7 @@
     {% if img_list %}
       {% for img_src in img_list %}
       <!-- <img class="popup" src="{{ img_src }}"> -->
-      <div class="popup" hx-get="{{ img_src }}" hx-trigger="load"></div>
+      <div class="popup" hx-get="{% static 'polls/' %}{{ img_src }}" hx-trigger="load"></div>
       {% endfor %}
     {% else %}
       <p>No images to load</p>

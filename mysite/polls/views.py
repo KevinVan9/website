@@ -12,15 +12,10 @@ def index(request):
 def get_pictures():
     image_list=[]
     static_dirs = settings.STATICFILES_DIRS
-    print("settings:", settings.__dict__)
-    print("static_dirs:", static_dirs)
     for dir in static_dirs:
-        print("directory:", dir)
         for file in os.listdir(dir):
-            print(file)
             if file.endswith(".png") or file.endswith(".jpg"):
                 image_list.append(file)
-    print(image_list)
     return image_list
 
 def test_load(request):
