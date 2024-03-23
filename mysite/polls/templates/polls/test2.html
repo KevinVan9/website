@@ -6,15 +6,14 @@
   <link rel="stylesheet" href="{% static 'polls/test.css' %}">
   <link rel="stylesheet" href="{% static 'polls/popup.css' %}"/>
   <head>
-    <title>Test image lazy loading</title>
+    <title>Testing HTMX Swaps</title>
   </head>
   <body>
-    <h1> Testing lazy loading images</h1>
+    <h1>Testing image swaps</h1>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     {% if img_list %}
       {% for img_src in img_list %}
-      <!-- <img class="popup" src="{{ img_src }}"> -->
-      <div class="popup" hx-get="{% static 'polls/' %}{{ img_src }}" hx-trigger="load"></div>
+      <button hx-get="/polls/popup" hx-swap="outerHTML">load image</button>
       {% endfor %}
     {% else %}
       <p>No images to load</p>

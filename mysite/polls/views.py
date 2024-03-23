@@ -27,6 +27,9 @@ def test_lazy_load(request):
 def popup(request):
     return render(request, "polls/popup.html")
 
+def gallery(request):
+    return render(request, "polls/gallery.html", {"img_list": get_pictures()})
+
 def detail(request, question_id):
     return HttpResponse("You're looking at question %s." % question_id)
 

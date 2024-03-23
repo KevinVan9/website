@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="{% static 'polls/gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'polls/popup.css' %}"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <!-- Include htmx and client-side-templates extension -->
+    <script src="https://unpkg.com/htmx.org@1.9.11/dist/ext/client-side-templates.js"></script>
+</head>
+<body>
+
+    <div id="side-panel" class="section" style="display: none;">
+        <h2>Side Panel</h2>
+    </div>
+    <div id="header">
+        <a id="return-home" href="../">Home...</a>
+        <button id="side-panel-toggle" hx-target="#side-panel">Toggle Side Panel</button>
+        {% for i in '01234567890'|make_list %}
+        <button>Header/Menu item</button>
+        {% endfor %}
+    </div>
+    <div id="main-content">
+
+        <div id="image-section" class="section">
+            <div class="section-header">
+                <h2>Image Gallery</h2>        
+                <button id="comments-toggle" hx-target="#comments-section">Load Comments</button>
+            </div>
+            <div id="image-gallery"> 
+                {% if img_list %}
+                    {% for img_src in img_list %}
+                <img class="image" src="{% static 'polls/' %}{{ img_src }}">
+                    {% endfor %}
+                {% else %}      
+                <p>No images to load</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div id="comments-section" class="section">
+            <div class="section-header">
+                <h2>Comments Section</h2>        
+                <button id="comments-toggle" hx-target="#comments-section">Close Comments</button>
+            </div>
+            <div id="comments-log"> comments here</div>
+            <input id="comment" type="text" placeholder="Type a comment..."/>
+        </div>
+
+    </div>
+
+    
+
+
+
+
+</body>
+</html>
