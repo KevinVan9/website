@@ -27,6 +27,9 @@ def test_lazy_load(request):
 def popup(request):
     return render(request, "polls/popup.html")
 
+def navigation_bar(request):
+    return render(request, "polls/navigation-bar.html")
+
 def gallery(request):
     return render(request, "polls/gallery.html", {"img_list": get_pictures()})
 

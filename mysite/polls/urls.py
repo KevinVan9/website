@@ -7,6 +7,7 @@ urlpatterns = [
     path("test2/", views.test_lazy_load, name="test_lazy_load"),
     path("popup/", views.popup, name="popup"),
     path("gallery/", views.gallery, name="gallerryyyyy"),
+    path("navigation-bar/", views.navigation_bar, name="nav bar"),
 
     # ex: /polls/
     path("", views.index, name="index"),
