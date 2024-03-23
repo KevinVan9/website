@@ -9,18 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
     <!-- Include htmx and client-side-templates extension -->
-    <script src="https://unpkg.com/htmx.org@1.9.11/dist/ext/client-side-templates.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script><script src="https://unpkg.com/htmx.org@1.9.11/dist/ext/client-side-templates.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
     <div id="side-panel" class="section" style="display: none;">
         <h2>Side Panel</h2>
     </div>
-    <div id="header">
-        <a id="return-home" href="../">Home...</a>
-        <button id="side-panel-toggle" hx-target="#side-panel">Toggle Side Panel</button>
+    <div id="header" class="bg-blue-500">
+        <a id="return-home" class="hover:bg-blue-700 text-white px-2" href="../">Home...</a>
+        <button id="side-panel-toggle" class="hover:bg-blue-700 text-white px-2" hx-target="#side-panel">Toggle Side Panel</button>
         {% for i in '01234567890'|make_list %}
-        <button>Header/Menu item</button>
+        <button class="hover:bg-blue-700 text-white px-2">Header/Menu item</button>
         {% endfor %}
     </div>
     <div id="main-content">
