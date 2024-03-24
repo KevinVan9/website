@@ -7,7 +7,6 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, "polls/index.html")
-    return HttpResponse("Hello, world. You're at the polls index.")
 
 def get_pictures():
     image_list=[]
@@ -18,6 +17,8 @@ def get_pictures():
                 image_list.append(file)
     return image_list
 
+def home(request):
+    return render(request, "polls/home.html")
 def test_load(request):
     return render(request, "polls/test.html", {"img_list": get_pictures()})
 
