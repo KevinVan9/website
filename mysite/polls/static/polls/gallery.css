@@ -21,7 +21,7 @@ body {
 
 #main-content {
     display:flex;
-    height: calc( 100% - 2em );
+    height: calc( 100% - 4em );
 }
 #image-section {
     margin-right: 0;
