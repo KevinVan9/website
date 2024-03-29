@@ -20,7 +20,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path("polls/", include("polls.urls")),
+    path("gallery/", include("gallery.urls")),
     path('admin/', admin.site.urls),
-    path('', lambda request: redirect('polls/')),
+    path('', lambda request: redirect('gallery/')),
     path('favicon.ico', lambda request: redirect('static/polls/favicon.ico')),
 ]

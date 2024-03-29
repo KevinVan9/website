@@ -30,13 +30,14 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '8000-kevinvan9-website-ur9qjozqv5j.w
 # Application definition
 
 INSTALLED_APPS = [
+    "polls.apps.PollsConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls'
+    "gallery"
 ]
 
 MIDDLEWARE = [
@@ -74,9 +75,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "polls",
+        "USER": "computer",
+        "PASSWORD": "password",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
+        # "OPTIONS": {
+        #     "service": "my_service",
+        #     "passfile": ".my_pgpass",
+        # },
     }
 }
 
@@ -105,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Australia/Sydney'
 
 USE_I18N = True
 
@@ -116,7 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = ['polls/static/polls']
+STATICFILES_DIRS = ['gallery/static/gallery']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

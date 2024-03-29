@@ -21,10 +21,10 @@
     />
   </head>
   <body>
-    <div id="nav" hx-preserve>{% include "polls/navigation-bar.html" %}</div>
+    <div id="nav" hx-preserve>{% include "gallery/navigation-bar.html" %}</div>
     <div id="main-content" class="d-flex">
-      <link rel="stylesheet" href="{% static 'polls/popup.css' %}" />
-      <link rel="stylesheet" href="{% static 'polls/gallery.css' %}" />
+      <link rel="stylesheet" href="{% static 'gallery/popup.css' %}" />
+      <link rel="stylesheet" href="{% static 'gallery/gallery.css' %}" />
       <div id="image-section" class="section">
         <div class="section-header">
           <h2>Image Gallery</h2>
@@ -34,7 +34,7 @@
         </div>
         <div id="image-gallery">
           {% if img_list %} {% for img_src in img_list %}
-          <img class="image" src="{% static 'polls/' %}{{ img_src }}" />
+          <img class="image" src="{% static 'gallery/' %}{{ img_src }}" />
           {% endfor %} {% else %}
           <p>No images to load</p>
           {% endif %}

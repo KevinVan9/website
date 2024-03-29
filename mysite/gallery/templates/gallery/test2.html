@@ -21,9 +21,9 @@
     />
   </head>
   <body>
-    <div id="nav" hx-preserve>{% include "polls/navigation-bar.html" %}</div>
+    <div id="nav" hx-preserve>{% include "gallery/navigation-bar.html" %}</div>
     <div id="main-content">
-      <link rel="stylesheet" href="{% static 'polls/popup.css' %}" />
+      <link rel="stylesheet" href="{% static 'gallery/popup.css' %}" />
       <div class="container my-5">
         <h1>Hello, world!</h1>
         <div class="col-lg-8 px-0">
@@ -64,7 +64,7 @@
           including versions of Lorem Ipsum.
         </p>
         {% if img_list %} {% for img_src in img_list %}
-        <button hx-get="/polls/popup" hx-swap="outerHTML">load image</button>
+        <button hx-get="/gallery/popup" hx-swap="outerHTML">load image</button>
         {% endfor %} {% else %}
         <p>No images to load</p>
         {% endif %}

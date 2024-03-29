@@ -22,12 +22,12 @@
   </head>
 
   <body>
-    <div id="nav" hx-preserve>{% include "polls/navigation-bar.html" %}</div>
+    <div id="nav" hx-preserve>{% include "gallery/navigation-bar.html" %}</div>
     <div
       id="main-content"
       class="container d-flex flex-column align-items-center my-5"
     >
-      <link rel="stylesheet" href="{% static 'polls/popup.css' %}" />
+      <link rel="stylesheet" href="{% static 'gallery/popup.css' %}" />
       <h1>Test image loading</h1>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -41,7 +41,7 @@
         of Lorem Ipsum.
       </p>
       {% if img_list %} {% for img_src in img_list %}
-      <div><img class="popup" src="{% static 'polls/' %}{{ img_src }}" /></div>
+      <div><img class="popup" src="{% static 'gallery/' %}{{ img_src }}" /></div>
       {% endfor %} {% else %}
       <p>No images to load</p>
       {% endif %}
