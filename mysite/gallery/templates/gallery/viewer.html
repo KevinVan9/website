@@ -22,7 +22,7 @@
   </head>
   <body>
     <div id="nav" hx-preserve>{% include "gallery/navigation-bar.html" %}</div>
-    <div id="main-content" class="d-flex">
+    <div id="main-content">
       <link rel="stylesheet" href="{% static 'gallery/popup.css' %}" />
       <link rel="stylesheet" href="{% static 'gallery/gallery.css' %}" />
       <div id="image-section" class="section">
@@ -32,12 +32,8 @@
             Load Comments
           </button>
         </div>
-        <div id="image-gallery">
-          {% if img_list %} {% for img_src in img_list %}
-          <img class="image" src="{% static 'gallery/' %}{{ img_src }}" />
-          {% endfor %} {% else %}
-          <p>No images to load</p>
-          {% endif %}
+        <div id="image-gallery" hx-trigger="load, click" hx-get="/gallery/random" hx-swap="outerHTML swap:150ms settle:150ms" hx-target="#random-image">
+          <img id="random-image" alt="Result loading..." width="150" src="{% static 'gallery/bars.svg' %}"/>
         </div>
       </div>
 

@@ -7,6 +7,7 @@ urlpatterns = [
     path("test2/", views.test_lazy_load, name="test_lazy_load"),
     path("popup/", views.popup, name="popup"),
     path("viewer/", views.viewer, name="viewer"),
+    path("random/", views.random_image, name="random"),
     path("navigation-bar/", views.navigation_bar, name="nav bar"),
     path("home/", views.home, name="home"),
     path("", views.index, name="index"),

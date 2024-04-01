@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.conf import settings
-import os
+import os, random
 # Create your views here.
 from django.http import HttpResponse
 
@@ -13,6 +13,7 @@ def get_pictures():
                 image_list.append(file)
     return image_list
 
+image_list = get_pictures()
 
 def index(request):
     return render(request, "gallery/index.html")
@@ -34,3 +35,6 @@ def navigation_bar(request):
 
 def viewer(request):
     return render(request, "gallery/viewer.html", {"img_list": get_pictures()})
+
+def random_image(request):
+    return render(request, "gallery/random-image.html", {"img_src":random.choice(image_list)})
