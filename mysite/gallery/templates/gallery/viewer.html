@@ -24,16 +24,17 @@
     <div id="nav" hx-preserve>{% include "gallery/navigation-bar.html" %}</div>
     <div id="main-content">
       <link rel="stylesheet" href="{% static 'gallery/popup.css' %}" />
-      <link rel="stylesheet" href="{% static 'gallery/gallery.css' %}" />
+      <link rel="stylesheet" href="{% static 'gallery/viewer.css' %}" />
       <div id="image-section" class="section">
         <div class="section-header">
           <h2>Image Gallery</h2>
-          <button id="comments-toggle" hx-target="#comments-section">
+          <button id="comments-toggle" hx-target="#comments-section" hx-get="/comments" hx-delete="true">
             Load Comments
           </button>
         </div>
-        <div id="image-gallery" hx-trigger="load, click" hx-get="/gallery/random" hx-swap="outerHTML swap:150ms settle:150ms" hx-target="#random-image">
-          <img id="random-image" alt="Result loading..." width="150" src="{% static 'gallery/bars.svg' %}"/>
+        <div id="image-gallery" hx-trigger="load, click" hx-get="/gallery/random" hx-swap="outerHTML" hx-target="#random-image">
+          <img id="loading" class="htmx-indicator m-auto" alt="Result loading..." width="150" src="{% static 'gallery/loader.gif' %}"/>
+          <div id="random-image"></div>
         </div>
       </div>
 

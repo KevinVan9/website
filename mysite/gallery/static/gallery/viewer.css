@@ -1,0 +1,66 @@
+html,body {
+    height:100vh;
+    width:100vw;
+}
+
+body {
+    padding:0;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-content {
+    width:100%;
+    display:flex;
+    height: calc( 100% - 4em );
+}
+#image-section {
+    margin-right: 0;
+    flex:4;
+    display:flex;
+    flex-direction: column;
+}
+#image-gallery {
+    /* overflow-x needs min-width in image 
+    not sure what's going on here. image gallery is a flex-item
+    and flex items cannot be smaller than content (.image)?
+    I hate CSS */
+    width:100%;
+    height:100%;
+    overflow: auto;
+    display: grid;
+}
+.image {
+    min-width: 50%;
+    /* min-height: 50%; */
+    margin:auto;
+}
+
+#loading {
+    display: none;
+    z-index: 1;
+}
+.htmx-request #loading {
+    display: block;
+}
+#loading, #random-image { grid-area: 1/1; }
+
+
+#comments-section {
+    display: flex;
+    flex-direction:column;
+    flex:1;
+    justify-content: space-between;
+}
+
+.section {
+    margin: 1em; 
+    border: solid black 1px;
+}
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    border:0;
+    border-bottom: solid black 1px;
+}

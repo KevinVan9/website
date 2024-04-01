@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.conf import settings
-import os, random
+import os, random, time
 # Create your views here.
 from django.http import HttpResponse
 
